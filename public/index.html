@@ -2,42 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ERIC Learn</title>
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+        background-color: #f4f4f4;
+        color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+        background-color: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        }
+
+        .navbar .logo video {
+        width: 150px;
+        border-radius: 50%;
+        }
+
+        .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        }
+
+        .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        }
+
+        /* Hero */
+        .hero {
+        text-align: center;
+        padding: 80px 20px 40px;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        color: white;
+        }
+
+        .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        }
+
+        .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        }
+
+        .hero button {
+        padding: 12px 24px;
+        background-color: #00bcd4;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        }
+
+        /* Cards */
+        .cards-section {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 50px 20px;
+        background-color: #fff;
+        }
+
+        .card {
+        background-color: #e3f2fd;
+        border-radius: 12px;
+        padding: 30px;
+        margin: 20px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+        }
+
+        /* Contact Card */
+        .contact-card {
+        background: linear-gradient(135deg, #8e24aa, #1e88e5);
+        color: white;
+        margin: 50px auto;
+        padding: 40px;
+        width: 80%;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-card h2 {
+        margin-bottom: 15px;
+        }
+
+        .contact-details {
+        background-color: #000;
+        color: white;
+        padding: 30px;
+        text-align: center;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #111;
+        color: #aaa;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <video autoplay muted loop playsinline class="logo-video">
-                <source src="./Img/Logo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <h1>ERIC Learn</h1>
-            <p class="tagline">Your Personal AI Learning Buddy</p>
-            <p class="subtext">Learn smarter with AI-driven explanations tailored to your style.</p>
-            <button id="getStartedBtn">Get Started</button>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+        <video src="./Img/Logo.mp4" autoplay muted loop playsinline></video>
         </div>
-    </header>
+        <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#login">Login/Signup</a></li>
+        </ul>
+    </nav>
 
-    <section id="features">
-        <h2>Why ERIC Learn?</h2>
-        <div class="feature-list">
-            <div class="feature">🎨 Visual, Audio, or Text-Based Learning</div>
-            <div class="feature">🤖 AI-Powered Concept Explanations</div>
-            <div class="feature">📈 Progress Tracking</div>
-            <div class="feature">🌐 Multilingual Support</div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>ERIC Learn</h1>
+        <p>Your Personal AI Learning Buddy</p>
+        <button onclick="document.getElementById('cards').scrollIntoView({ behavior: 'smooth' })">Get Started</button>
+    </section>
+
+    <!-- AI Feature Cards -->
+    <section class="cards-section" id="cards">
+        <div class="card">
+        <h3>Visual AI</h3>
+        <p>Explains with diagrams and flowcharts.</p>
+        </div>
+        <div class="card">
+        <h3>Text AI</h3>
+        <p>Simple written explanations and summaries.</p>
+        </div>
+        <div class="card">
+        <h3>Audio AI</h3>
+        <p>Listens and explains through voice guidance.</p>
+        </div>
+        <div class="card">
+        <h3>Quiz AI</h3>
+        <p>Tests knowledge with interactive quizzes.</p>
         </div>
     </section>
 
-    <footer>
-        <p>2025 @ copy ERIC Learn...</p>
-    </footer>
+    <!-- Contact Card -->
+    <div class="contact-card">
+        <h2>Need Help or Have a Question?</h2>
+        <p>Reach out to us and we’ll get back to you shortly!</p>
+    </div>
 
-    <script>
-        document.getElementById("getStartedBtn").addEventListener("click", () => {
-            document.getElementById("features").scrollIntoView({ behavior: "smooth" });
-        });
-    </script>
+    <!-- Contact Details -->
+    <div class="contact-details">
+        <p>Email: eric.learn@support.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <p>Location: Hackverse Arena, India</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 ERIC Learn.</p>
+    </footer>
 </body>
 </html>
