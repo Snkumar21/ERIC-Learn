@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ERIC Learn</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <video autoplay muted loop playsinline class="logo-video">
+                <source src="./Img/Logo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <h1>ERIC Learn</h1>
+            <p class="tagline">Your Personal AI Learning Buddy</p>
+            <p class="subtext">Learn smarter with AI-driven explanations tailored to your style.</p>
+            <button id="getStartedBtn">Get Started</button>
+        </div>
+    </header>
+
+    <section id="features">
+        <h2>Why ERIC Learn?</h2>
+        <div class="feature-list">
+            <div class="feature">🎨 Visual, Audio, or Text-Based Learning</div>
+            <div class="feature">🤖 AI-Powered Concept Explanations</div>
+            <div class="feature">📈 Progress Tracking</div>
+            <div class="feature">🌐 Multilingual Support</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>2025 @ copy ERIC Learn...</p>
+    </footer>
+
+    <script>
+        document.getElementById("getStartedBtn").addEventListener("click", () => {
+            document.getElementById("features").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>
