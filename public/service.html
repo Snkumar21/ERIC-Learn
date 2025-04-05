@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - ERIC Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .services-container h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1e88e5;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        .service-card h2 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-card button {
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ERIC Learn</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="services-container">
+        <h1>Our AI-Powered Services</h1>
+
+        <div class="service-card">
+            <h2>Visual AI</h2>
+            <p>Visual AI presents topics with diagrams, charts, mind maps, and visual cues that help learners better understand concepts through a graphic-rich experience.</p>
+            <button onclick="alert('Coming soon: Visual AI Module')">Let's Start</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Text AI</h2>
+            <p>Text AI provides clear, concise, and structured text explanations, summaries, and step-by-step breakdowns tailored to user queries and learning levels.</p>
+            <button onclick="alert('Coming soon: Text AI Module')">Let's Start</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Audio AI</h2>
+            <p>Audio AI explains concepts through audio, helping auditory learners absorb content by listening to easy-to-follow narrations or voice-based interactions.</p>
+            <button onclick="alert('Coming soon: Audio AI Module')">Let's Start</button>
+        </div>
+
+        <div class="service-card">
+            <h2>Quiz AI</h2>
+            <p>Quiz AI generates interactive questions based on studied topics, enabling students to test their understanding and receive instant feedback and explanations.</p>
+            <button onclick="alert('Coming soon: Quiz AI Module')">Let's Start</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 ERIC Learn. Built with 💙 at Hackverse.</p>
+    </footer>
+</body>
+</html>

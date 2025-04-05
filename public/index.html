@@ -7,125 +7,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-        background-color: #f4f4f4;
-        color: #333;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
         /* Navbar */
         .navbar {
-        background-color: #000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
         }
 
         .navbar .logo video {
-        width: 150px;
-        border-radius: 50%;
+            width: 150px;
+            border-radius: 50%;
         }
 
         .navbar ul {
-        list-style: none;
-        display: flex;
-        gap: 2rem;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
         }
 
         .navbar ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
         }
 
         /* Hero */
         .hero {
-        text-align: center;
-        padding: 80px 20px 40px;
-        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        color: white;
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
         }
 
         .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
         }
 
         .hero button {
-        padding: 12px 24px;
-        background-color: #00bcd4;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        cursor: pointer;
+            padding: 12px 24px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
         }
 
         /* Cards */
         .cards-section {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 50px 20px;
-        background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+            background-color: #fff;
         }
 
         .card {
-        background-color: #e3f2fd;
-        border-radius: 12px;
-        padding: 30px;
-        margin: 20px;
-        width: 250px;
-        text-align: center;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            background-color: #e3f2fd;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
         .card h3 {
-        margin-bottom: 10px;
-        font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
         /* Contact Card */
         .contact-card {
-        background: linear-gradient(135deg, #8e24aa, #1e88e5);
-        color: white;
-        margin: 50px auto;
-        padding: 40px;
-        width: 80%;
-        border-radius: 15px;
-        text-align: center;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #8e24aa, #1e88e5);
+            color: white;
+            margin: 50px auto;
+            padding: 40px;
+            width: 80%;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
 
         .contact-card h2 {
-        margin-bottom: 15px;
+            margin-bottom: 15px;
         }
 
         .contact-details {
-        background-color: #000;
-        color: white;
-        padding: 30px;
-        text-align: center;
+            background-color: #000;
+            color: white;
+            padding: 30px;
+            text-align: center;
         }
 
         /* Footer */
         footer {
-        background-color: #111;
-        color: #aaa;
-        text-align: center;
-        padding: 20px;
-        font-size: 0.9rem;
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -133,12 +133,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-        <video src="./Img/Logo.mp4" autoplay muted loop playsinline></video>
+            <video src="./Img/Logo.mp4" autoplay muted loop playsinline></video>
         </div>
         <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#login">Login/Signup</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
 
@@ -146,7 +147,7 @@
     <section class="hero">
         <h1>ERIC Learn</h1>
         <p>Your Personal AI Learning Buddy</p>
-        <button onclick="document.getElementById('cards').scrollIntoView({ behavior: 'smooth' })">Get Started</button>
+        <button onclick="window.location.href='login.html'">Get Started</button>
     </section>
 
     <!-- AI Feature Cards -->

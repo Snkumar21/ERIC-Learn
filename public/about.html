@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - ERIC Learn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar .logo span {
+            color: #00bcd4;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .about-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-section h1 {
+            font-size: 3rem;
+            color: #1e88e5;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #8e24aa;
+            font-weight: 600;
+        }
+
+        .info-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: left;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: #00bcd4;
+        }
+
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ERIC <span>Learn</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-section">
+        <h1>About ERIC Learn</h1>
+        <p>
+            <span class="highlight">ERIC Learn</span> is an AI-powered education platform designed to make learning more accessible, personalized, and engaging. Born from the idea that every student learns differently, ERIC uses the power of Artificial Intelligence to adapt explanations and concepts based on each individual's preferred learning style.
+        </p>
+        <p>
+            Whether you understand better through <span class="highlight">visual aids</span>, clear <span class="highlight">text summaries</span>, <span class="highlight">audio lectures</span>, or need <span class="highlight">interactive quizzes</span> to reinforce concepts — ERIC Learn has you covered.
+        </p>
+
+        <div class="info-cards">
+        <div class="info-card">
+            <h3>Our Mission</h3>
+            <p>To break down barriers in education by offering adaptive learning experiences for every kind of student across the globe.</p>
+        </div>
+        <div class="info-card">
+            <h3>Why ERIC?</h3>
+            <p>ERIC stands for <b>Explain, Reinforce, Interact, and Connect</b> — the four pillars of effective learning enhanced by AI.</p>
+        </div>
+        <div class="info-card">
+            <h3>Hackverse 2025</h3>
+            <p>This project was developed during Hackverse 2025 to solve real-world problems in the education sector using smart AI-based innovations.</p>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 ERIC Learn. Built with 💙 at Hackverse.</p>
+    </footer>
+</body>
+</html>
