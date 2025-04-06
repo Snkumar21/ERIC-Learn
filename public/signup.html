@@ -60,14 +60,54 @@
 <body>
     <div class="signup-box">
         <h2>Create your account</h2>
-        <form>
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
-            <input type="password" placeholder="Confirm Password" required>
+        <form id="registerform">
+            <input type="text" name="username" id="username" placeholder="Full Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="new_password" placeholder="Password" required>
+            <input type="password" name="password_confirm" id="confirm_password" placeholder="Confirm Password" required>
             <button type="submit">Sign Up</button>
         </form>
         <p>Already have an account? <a href="login.html">Login</a></p>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerform");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const new_password = document.getElementById("new_password").value;
+                const confirm_password = document.getElementById("confirm_password").value;
+
+                // Check if passwords match before sending to server
+                if (new_password !== confirm_password) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // POST request to the server
+                fetch("/registerform", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ username, email, password: new_password }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Sign Up Successfully");
+                        form.reset();  // Clear the form
+                        window.location.href = "/login";
+                    } else {
+                        alert("Error: " + data.message);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    </script>
 </body>
 </html>

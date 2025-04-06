@@ -66,12 +66,42 @@
 <body>
     <div class="login-box">
         <h2>Login to ERIC Learn</h2>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Password" required>
+        <form action="/loginform" class="loginform" id="loginform" method="post">
+            <input type="email" placeholder="Email" id= "email" name="email" required>
+            <input type="password" placeholder="Password" id="password" name="password" required>
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="signup.html">Sign up</a></p>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("loginform");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+    
+            // Make a POST request to your server
+            fetch("/loginform", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, password }),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                alert("Login Successfully");
+                window.location.href = "/service";
+                } else {
+                alert("Error: " + data.message);
+                }
+            })
+            .catch((error) => console.error("Error:", error));
+        });
+        });
+    </script>
 </body>
 </html>
