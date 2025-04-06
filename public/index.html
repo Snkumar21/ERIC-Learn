@@ -116,6 +116,37 @@
 
         .contact-card h2 {
             margin-bottom: 15px;
+            font-size: 40px;
+        }
+
+        .contactForm label{
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .contactForm input[type="text"],
+        .contactForm input[type="email"],
+        .contactForm textarea {
+            width: 40%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contactForm button {
+            width: 40%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contactForm button:hover {
+            background-color: #0056b3;
         }
 
         .contact-details {
@@ -178,8 +209,16 @@
 
     <!-- Contact Card -->
     <div class="contact-card">
-        <h2>Need Help or Have a Question?</h2>
-        <p>Reach out to us and we’ll get back to you shortly!</p>
+        <h2>Contact Us</h2>
+        <form action="/contact" id="contactForm" class="contactForm" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" class="message" name="message" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
     <!-- Contact Details -->
