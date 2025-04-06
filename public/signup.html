@@ -9,25 +9,28 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #e3f2fd;
+            background: linear-gradient(45deg, #000, #00002e, #013c80, #00002e, #000);
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
         }
+
         .signup-box {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.074);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             width: 400px;
         }
+
         .signup-box h2 {
             margin-bottom: 20px;
             color: #1e88e5;
             text-align: center;
         }
+
         .signup-box input {
             width: 93%;
             padding: 12px;
@@ -35,7 +38,16 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            outline: none;
         }
+
+        .signup-box input::placeholder {
+            color: #bbb;
+        }
+
         .signup-box button {
             width: 100%;
             padding: 12px;
@@ -46,12 +58,21 @@
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
+            margin-top: 10px;
         }
+
+        .signup-box button:hover {
+            background-color: #1565c0;
+            transition: background-color 0.3s ease;
+        }
+
         .signup-box p {
             text-align: center;
             margin-top: 15px;
             font-size: 0.9rem;
+            color: #ccc;
         }
+
         .signup-box a {
             color: #1e88e5;
             text-decoration: none;
