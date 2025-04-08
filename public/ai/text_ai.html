@@ -83,21 +83,21 @@
     </div>
 
     <script>
-        async function generateResponse() {
-            const prompt = document.getElementById('userPrompt').value;
-            const responseBox = document.getElementById('responseBox');
+        async function sendPrompt() {
+            const prompt = document.getElementById("userPrompt").value;
+            const resBox = document.getElementById("response");
+            resBox.textContent = "Thinking...";
 
-            if (!prompt.trim()) {
-                responseBox.textContent = "Please enter a valid prompt.";
-                return;
-            }
+            const res = await fetch("/api/chat", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ prompt }),
+            });
 
-            responseBox.textContent = "Thinking...";
-
-            // Simulated response for now (replace with real API call)
-            setTimeout(() => {
-                responseBox.textContent = `AI Response to: "${prompt}"\n\nThis is a dummy response. Connect to OpenAI or your backend to get actual results.`;
-            }, 1500);
+            const data = await res.json();
+            resBox.textContent = data.response || "Sorry, something went wrong.";
         }
     </script>
 </body>
