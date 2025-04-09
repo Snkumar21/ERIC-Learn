@@ -20,6 +20,54 @@
             height: 100vh;
         }
 
+        .navbar {
+            width: 100%;
+            background-color: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+            padding-left: 10px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding-right: 10px;
+        }
+
+        .navbar li {
+            display: inline;
+        }
+
+        .navbar a, .navbar .user-email, .navbar button {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
         .container {
             max-width: 800px;
             width: 90%;
@@ -49,7 +97,7 @@
             margin-bottom: 20px;
         }
 
-        button {
+        .generate {
             width: 100%;
             padding: 12px;
             background-color: #00bcd4;
@@ -61,7 +109,7 @@
             cursor: pointer;
         }
 
-        button:hover {
+        .generate:hover {
             background-color: #00a2b8;
         }
 
@@ -75,15 +123,28 @@
     </style>
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">ERIC <span>Learn</span> <span class="user-email" id="userEmail"></span></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../service.html">Services</a></li>
+            <li><button onclick="logout()">Logout</button></li>
+        </ul>
+    </nav>
     <div class="container">
         <h1>Text AI Generator</h1>
         <textarea id="userPrompt" placeholder="Ask anything..."></textarea>
-        <button onclick="sendPrompt()">Generate</button>
+        <button class="generate" onclick="sendPrompt()">Generate</button>
         <div class="response" id="response">Your response will appear here...</div>
     </div>
 
+    <script src="./qadata.js"></script>
+
     <script>
-        async function sendPrompt() {
+        // API Key integration...
+        /*async function sendPrompt() {
             const prompt = document.getElementById("userPrompt").value.trim();
             const resBox = document.getElementById("response");
 
@@ -109,6 +170,56 @@
                 resBox.textContent = "Error connecting to server.";
                 console.error(error);
             }
+        }*/
+
+
+        // Manual Data Integration...
+        document.getElementById("userEmail").textContent = " - user@example.com";
+
+        function logout() {
+            // Clear storage, redirect or any logout logic
+            alert("Logged out successfully!");
+            window.location.href = "login.html";
+        }
+
+        function sendPrompt() {
+            const input = document.getElementById("userPrompt").value.trim().toLowerCase();
+            const resBox = document.getElementById("response");
+
+            if (!input) {
+                resBox.textContent = "Please enter a question.";
+                return;
+            }
+
+            let matchedAnswers = [];
+
+            for (const item of qaData) {
+                const match = item.keywords.some(keyword => input.includes(keyword));
+                if (match) {
+                    matchedAnswers.push(item.answer);
+                }
+            }
+
+            const finalAnswer = matchedAnswers.length
+                ? matchedAnswers.join("\n\n")
+                : "Sorry, I don't have an answer for that yet.";
+
+            typeWriterEffect(finalAnswer, resBox);
+        }
+
+        function typeWriterEffect(text, element, speed = 30) {
+            element.textContent = "";
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    element.innerHTML += text[index] === "\n" ? "<br>" : text[index];
+                    index++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
         }
     </script>
 </body>
