@@ -13,11 +13,56 @@
             color: #fff;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #111;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+            padding-left: 10px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding-right: 10px;
+        }
+
+        .navbar li {
+            display: inline;
+        }
+
+        .navbar a, .navbar .user-email, .navbar button {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
         }
 
         .container {
@@ -28,6 +73,8 @@
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
+            margin: 40px auto;
+            margin-top: 90px;
         }
 
         h1 {
@@ -49,7 +96,7 @@
             margin-bottom: 20px;
         }
 
-        button {
+        .generate {
             width: 100%;
             padding: 12px;
             background-color: #00bcd4;
@@ -61,7 +108,7 @@
             cursor: pointer;
         }
 
-        button:hover {
+        .generate:hover {
             background-color: #00a2b8;
         }
 
@@ -73,18 +120,157 @@
             min-height: 100px;
             white-space: pre-line;
         }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            textarea {
+                height: 80px;
+            }
+        }
+
+        .options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1.2;
+            vertical-align: middle;
+            line-height: 1rem;
+        }
+
+        .options input[type="radio"] {
+            margin: 0;
+            vertical-align: middle;
+            transform: translateY(-1px); /* Yeh thoda upar karega */
+        }
+
+        .response > div {
+            margin-bottom: 20px;
+        }
+
+        .score-card {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #00e676;
+            text-align: center;
+        }
+        .correct {
+            color: #00e676;
+        }
+        .incorrect {
+            color: #ff5252;
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">ERIC <span>Learn</span> <span class="user-email" id="userEmail"></span></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../service.html">Services</a></li>
+            <li><button onclick="logout()">Logout</button></li>
+        </ul>
+    </nav>
     <div class="container">
         <h1>Quiz AI Generator</h1>
         <textarea id="quizPrompt" placeholder="Ask AI to generate a quiz on any topic..."></textarea>
-        <button onclick="generateQuiz()">Generate Quiz</button>
+        <button class="generate" onclick="generateQuiz()">Generate Quiz</button>
         <div class="response" id="quizResponse">Your quiz will appear here...</div>
     </div>
 
+    <script src="./quizdata.js"></script>
     <script>
-        async function generateQuiz() {
+        function generateQuiz() {
+            const topic = document.getElementById("quizPrompt").value.trim().toLowerCase();
+            const resBox = document.getElementById("quizResponse");
+            resBox.innerHTML = "";
+    
+            const filtered = qaData.filter(item =>
+                item.topic.toLowerCase() === topic
+            );
+    
+            if (!filtered.length) {
+                resBox.textContent = "No quiz data available for this topic.";
+                return;
+            }
+    
+            const questions = filtered[0].questions.slice(0, 5);
+    
+            questions.forEach((q, index) => {
+                const questionBox = document.createElement("div");
+                questionBox.innerHTML = `<p><strong>Q${index + 1}:</strong> ${q.question}</p>`;
+    
+                const optionsBox = document.createElement("div");
+                optionsBox.className = "options";
+    
+                q.options.forEach((opt, optIndex) => {
+                    const optionId = `q${index}_opt${optIndex}`;
+                    optionsBox.innerHTML += `
+                        <label for="${optionId}">
+                            <input type="radio" name="q${index}" id="${optionId}" value="${opt}">
+                            ${opt}
+                        </label>`;
+                });
+    
+                questionBox.appendChild(optionsBox);
+                resBox.appendChild(questionBox);
+            });
+    
+            // Add submit button
+            const submitBtn = document.createElement("button");
+            submitBtn.textContent = "Submit Quiz";
+            submitBtn.onclick = () => submitQuiz(questions);
+            resBox.appendChild(submitBtn);
+    
+            // Score card placeholder
+            const scoreCard = document.createElement("div");
+            scoreCard.id = "scoreCard";
+            scoreCard.className = "score-card";
+            resBox.appendChild(scoreCard);
+        }
+    
+        function submitQuiz(questions) {
+            let score = 0;
+    
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name="q${index}"]:checked`);
+                const options = document.getElementsByName(`q${index}`);
+                const correctAnswer = q.answer;
+    
+                options.forEach(opt => {
+                    const label = opt.closest("label");
+                    if (opt.value === correctAnswer) {
+                        label.classList.add("correct");
+                    }
+    
+                    if (opt.checked && opt.value !== correctAnswer) {
+                        label.classList.add("incorrect");
+                    }
+    
+                    // Disable options after submission
+                    opt.disabled = true;
+                });
+    
+                if (selected && selected.value === correctAnswer) {
+                    score++;
+                }
+            });
+    
+            const scoreCard = document.getElementById("scoreCard");
+            scoreCard.textContent = `You scored: ${score}/${questions.length}`;
+        }
+    </script>
+
+    <script>
+        // API endpoint for generating quizzes
+        /*async function generateQuiz() {
             const prompt = document.getElementById("quizPrompt").value;
             const resBox = document.getElementById("quizResponse");
             resBox.textContent = "Generating quiz...";
@@ -99,7 +285,7 @@
 
             const data = await res.json();
             resBox.textContent = data.response || "Sorry, something went wrong.";
-        }
+        }*/
     </script>
 </body>
 </html>

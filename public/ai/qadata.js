@@ -66,20 +66,20 @@ const qaData = [
     {
         keywords: ["classes", "objects"],
         answer: "Classes and Objects is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 11)"
-      },
-      {
+    },
+    {
         keywords: ["inheritance"],
         answer: "Inheritance allows a class to acquire properties and behaviors of another class. It supports code reusability and hierarchical classification. (Topic 12)"
-      },
-      {
+    },
+    {
         keywords: ["polymorphism"],
         answer: "Polymorphism allows objects to take many forms, enabling the same interface to be used for different data types. (Topic 13)"
-      },
-      {
+    },
+    {
         keywords: ["encapsulation"],
         answer: "Encapsulation is the bundling of data and methods that operate on the data within a single unit or class, enhancing data protection. (Topic 14)"
-      },
-      {
+    },
+    {
         keywords: ["abstraction"],
         answer: "Abstraction hides implementation details and shows only functionality, helping reduce complexity. (Topic 15)"
       },
@@ -258,164 +258,164 @@ const qaData = [
       {
         keywords: ["react"],
         answer: "React is a JavaScript library for building fast and interactive user interfaces. (Topic 59)"
-      },
-      {
+    },
+    {
         keywords: ["vue.js"],
         answer: "Vue.js is a progressive JavaScript framework for building UIs and single-page applications. (Topic 60)"
-      },
-      {
+    },
+    {
         keywords: ["angular"],
         answer: "Angular is a TypeScript-based framework used for building scalable front-end applications. (Topic 61)"
-      },
-      {
+    },
+    {
         keywords: ["back-end development"],
         answer: "Back-End Development focuses on server-side logic, databases, and API communication. (Topic 62)"
-      },
-      {
+    },
+    {
         keywords: ["node.js"],
         answer: "Node.js is a runtime environment that lets you run JavaScript on the server. (Topic 63)"
-      },
-      {
+    },
+    {
         keywords: ["express.js"],
         answer: "Express.js is a web application framework for Node.js used for building APIs and web servers. (Topic 64)"
-      },
-      {
+    },
+    {
         keywords: ["python web"],
         answer: "Python can be used for web development using frameworks like Django and Flask. (Topic 65)"
-      },
-      {
+    },
+    {
         keywords: ["ruby on rails"],
         answer: "Ruby on Rails is a server-side web application framework written in Ruby. (Topic 66)"
-      },
-      {
+    },
+    {
         keywords: ["django"],
         answer: "Django is a high-level Python web framework that promotes rapid development and clean design. (Topic 67)"
-      },
-      {
+    },
+    {
         keywords: ["flask"],
         answer: "Flask is a lightweight Python web framework ideal for small applications and APIs. (Topic 68)"
-      },
-      {
+    },
+    {
         keywords: ["databases", "sql", "nosql"],
         answer: "Databases are structured collections of data; SQL and NoSQL are two primary types. (Topic 69)"
-      },
-      {
+    },
+    {
         keywords: ["mysql"],
         answer: "MySQL is a popular open-source relational database management system. (Topic 70)"
-      },
-      {
+    },
+    {
         keywords: ["postgresql"],
         answer: "PostgreSQL is a powerful, open-source object-relational database system. (Topic 71)"
-      },
-      {
+    },
+    {
         keywords: ["mongodb"],
         answer: "MongoDB is a NoSQL document-oriented database used for high-volume data storage. (Topic 72)"
-      },
-      {
+    },
+    {
         keywords: ["sqlite"],
         answer: "SQLite is a lightweight, file-based relational database used for local storage. (Topic 73)"
-      },
-      {
+    },
+    {
         keywords: ["database design"],
         answer: "Database Design involves planning the structure and relationships of data for optimal storage and access. (Topic 74)"
-      },
-      {
+    },
+    {
         keywords: ["orm"],
         answer: "ORM (Object-Relational Mapping) allows you to interact with databases using object-oriented code. (Topic 75)"
-      },
-      {
+    },
+    {
         keywords: ["restful apis"],
         answer: "RESTful APIs use HTTP methods and are based on REST principles for building scalable services. (Topic 76)"
-      },
-      {
+    },
+    {
         keywords: ["graphql"],
         answer: "GraphQL is a query language for APIs and a runtime for executing those queries. (Topic 77)"
-      },
-      {
+    },
+    {
         keywords: ["web services"],
         answer: "Web Services allow communication between machines over a network using standards like SOAP and REST. (Topic 78)"
-      },
-      {
+    },
+    {
         keywords: ["git", "github", "version control"],
         answer: "Version Control using Git and GitHub helps track and manage changes to source code. (Topic 79)"
-      },
-      {
+    },
+    {
         keywords: ["git workflow"],
         answer: "Git Workflow defines branching and merging models to collaborate on software efficiently. (Topic 80)"
-      },
-      {
+    },
+    {
         keywords: ["docker", "containers"],
         answer: "Docker allows you to package applications into containers for consistent deployment. (Topic 81)"
-      },
-      {
+    },
+    {
         keywords: ["ci/cd"],
         answer: "CI/CD refers to Continuous Integration and Deployment, improving software delivery speed and quality. (Topic 82)"
-      },
-      {
+    },
+    {
         keywords: ["devops"],
         answer: "DevOps is a set of practices that combines software development and IT operations. (Topic 83)"
-      },
-      {
+    },
+    {
         keywords: ["cloud computing"],
         answer: "Cloud Computing delivers computing services over the internet with flexible scalability. (Topic 84)"
-      },
-      {
+    },
+    {
         keywords: ["aws"],
         answer: "AWS (Amazon Web Services) offers on-demand cloud computing platforms and APIs. (Topic 85)"
-      },
-      {
+    },
+    {
         keywords: ["azure"],
         answer: "Microsoft Azure is a cloud platform for building, deploying, and managing applications. (Topic 86)"
-      },
-      {
+    },
+    {
         keywords: ["google cloud", "gcp"],
         answer: "Google Cloud Platform provides cloud services for computing, storage, machine learning, and more. (Topic 87)"
-      },
-      {
+    },
+    {
         keywords: ["serverless"],
         answer: "Serverless Architecture lets you build and run applications without managing servers. (Topic 88)"
-      },
-      {
+    },
+    {
         keywords: ["mobile development"],
         answer: "Mobile App Development involves creating software for smartphones and tablets. (Topic 89)"
-      },
-      {
+    },
+    {
         keywords: ["android", "kotlin", "java android"],
         answer: "Android Development uses Java or Kotlin to create native Android apps. (Topic 90)"
-      },
-      {
+    },
+    {
         keywords: ["ios", "swift"],
         answer: "iOS Development uses Swift and Objective-C for building apps on Apple devices. (Topic 91)"
-      },
-      {
+    },
+    {
         keywords: ["flutter", "react native"],
         answer: "Cross-Platform Development tools like Flutter and React Native enable building apps for iOS and Android with one codebase. (Topic 92)"
-      },
-      {
+    },
+    {
         keywords: ["game development"],
         answer: "Game Development involves designing, coding, and testing interactive games. (Topic 93)"
-      },
-      {
+    },
+    {
         keywords: ["unity"],
         answer: "Unity is a cross-platform game engine used for building 2D and 3D games. (Topic 94)"
-      },
-      {
+    },
+    {
         keywords: ["unreal engine"],
         answer: "Unreal Engine is a powerful game development engine developed by Epic Games. (Topic 95)"
-      },
-      {
+    },
+    {
         keywords: ["c++"],
         answer: "C++ is a high-performance language used in system software, game engines, and more. (Topic 96)"
-      },
-      {
+    },
+    {
         keywords: ["java"],
         answer: "Java is a versatile, object-oriented language widely used for web, mobile, and desktop apps. (Topic 97)"
-      },
-      {
+    },
+    {
         keywords: ["python"],
         answer: "Python is a high-level, interpreted language known for simplicity and readability. (Topic 98)"
-      },
-      {
+    },
+    {
         keywords: ["ruby"],
         answer: "Ruby is an expressive, easy-to-read language often used in web development. (Topic 99)"
     },
