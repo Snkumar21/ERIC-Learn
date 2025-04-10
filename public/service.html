@@ -102,6 +102,18 @@
             margin-top: 60px;
         }
     </style>
+
+    <script>
+        function checkLoginAndRedirect(url) {
+            const userEmail = localStorage.getItem("userEmail");
+            if (userEmail && userEmail !== "") {
+                window.location.href = url;
+            } else {
+                alert("You must log in first to use this service.");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -120,25 +132,25 @@
         <div class="service-card">
             <h2>Visual AI</h2>
             <p>Visual AI presents topics with diagrams, charts, mind maps, and visual cues that help learners better understand concepts through a graphic-rich experience.</p>
-            <button onclick="alert('Coming soon: Visual AI Module')">Let's Start</button>
+            <button onclick="checkLoginAndRedirect('./ai/visual_ai.html')">Let's Start</button>
         </div>
 
         <div class="service-card">
             <h2>Text AI</h2>
             <p>Text AI provides clear, concise, and structured text explanations, summaries, and step-by-step breakdowns tailored to user queries and learning levels.</p>
-            <button onclick="window.location.href='./ai/text_ai.html'">Let's Start</button>
+            <button onclick="checkLoginAndRedirect('./ai/text_ai.html')">Let's Start</button>
         </div>
 
         <div class="service-card">
             <h2>Audio AI</h2>
             <p>Audio AI explains concepts through audio, helping auditory learners absorb content by listening to easy-to-follow narrations or voice-based interactions.</p>
-            <button onclick="alert('Coming soon: Audio AI Module')">Let's Start</button>
+            <button onclick="checkLoginAndRedirect('./ai/audio_ai.html')">Let's Start</button>
         </div>
 
         <div class="service-card">
             <h2>Quiz AI</h2>
             <p>Quiz AI generates interactive questions based on studied topics, enabling students to test their understanding and receive instant feedback and explanations.</p>
-            <button onclick="window.location.href='./ai/quiz_ai.html'">Let's Start</button>
+            <button onclick="checkLoginAndRedirect('./ai/quiz_ai.html')">Let's Start</button>
         </div>
     </section>
 
