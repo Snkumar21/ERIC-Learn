@@ -185,31 +185,48 @@
         <div class="response" id="quizResponse">Your quiz will appear here...</div>
     </div>
 
+    <script>
+        // Display email from localStorage
+        window.onload = () => {
+            const userEmail = localStorage.getItem("userEmail");
+            const userEmailElement = document.getElementById("userEmail");
+            if (userEmailElement) {
+                userEmailElement.textContent = userEmail ? ` - ${userEmail}` : "";
+            }
+        };
+
+        // Logout logic
+        function logout() {
+            localStorage.removeItem("userEmail");
+            alert("Logged out successfully!");
+            window.location.href = "../login.html";
+        }
+    </script>
     <script src="./quizdata.js"></script>
     <script>
         function generateQuiz() {
             const topic = document.getElementById("quizPrompt").value.trim().toLowerCase();
             const resBox = document.getElementById("quizResponse");
             resBox.innerHTML = "";
-    
+
             const filtered = qaData.filter(item =>
                 item.topic.toLowerCase() === topic
             );
-    
+
             if (!filtered.length) {
                 resBox.textContent = "No quiz data available for this topic.";
                 return;
             }
-    
+
             const questions = filtered[0].questions.slice(0, 5);
-    
+
             questions.forEach((q, index) => {
                 const questionBox = document.createElement("div");
                 questionBox.innerHTML = `<p><strong>Q${index + 1}:</strong> ${q.question}</p>`;
-    
+
                 const optionsBox = document.createElement("div");
                 optionsBox.className = "options";
-    
+
                 q.options.forEach((opt, optIndex) => {
                     const optionId = `q${index}_opt${optIndex}`;
                     optionsBox.innerHTML += `
@@ -218,51 +235,51 @@
                             ${opt}
                         </label>`;
                 });
-    
+
                 questionBox.appendChild(optionsBox);
                 resBox.appendChild(questionBox);
             });
-    
+
             // Add submit button
             const submitBtn = document.createElement("button");
             submitBtn.textContent = "Submit Quiz";
             submitBtn.onclick = () => submitQuiz(questions);
             resBox.appendChild(submitBtn);
-    
+
             // Score card placeholder
             const scoreCard = document.createElement("div");
             scoreCard.id = "scoreCard";
             scoreCard.className = "score-card";
             resBox.appendChild(scoreCard);
         }
-    
+
         function submitQuiz(questions) {
             let score = 0;
-    
+
             questions.forEach((q, index) => {
                 const selected = document.querySelector(`input[name="q${index}"]:checked`);
                 const options = document.getElementsByName(`q${index}`);
                 const correctAnswer = q.answer;
-    
+
                 options.forEach(opt => {
                     const label = opt.closest("label");
                     if (opt.value === correctAnswer) {
                         label.classList.add("correct");
                     }
-    
+
                     if (opt.checked && opt.value !== correctAnswer) {
                         label.classList.add("incorrect");
                     }
-    
+
                     // Disable options after submission
                     opt.disabled = true;
                 });
-    
+
                 if (selected && selected.value === correctAnswer) {
                     score++;
                 }
             });
-    
+
             const scoreCard = document.getElementById("scoreCard");
             scoreCard.textContent = `You scored: ${score}/${questions.length}`;
         }

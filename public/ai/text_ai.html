@@ -139,8 +139,19 @@
         <div class="response" id="response">Your response will appear here...</div>
     </div>
 
-    <script src="./qadata.js"></script>
+    <script>
+        // Display the email from localStorage
+        const userEmail = localStorage.getItem("userEmail");
+        document.getElementById("userEmail").textContent = userEmail ? ` - ${userEmail}` : "";
 
+        // Logout function
+        function logout() {
+            localStorage.removeItem("userEmail");
+            alert("Logged out successfully!");
+            window.location.href = "../login.html";
+        }
+    </script>
+    <script src="./qadata.js"></script>
     <script>
         // API Key integration...
         /*async function sendPrompt() {
@@ -173,14 +184,6 @@
 
 
         // Manual Data Integration...
-        document.getElementById("userEmail").textContent = " - user@example.com";
-
-        function logout() {
-            // Clear storage, redirect or any logout logic
-            alert("Logged out successfully!");
-            window.location.href = "login.html";
-        }
-
         function sendPrompt() {
             const input = document.getElementById("userPrompt").value.trim().toLowerCase();
             const resBox = document.getElementById("response");

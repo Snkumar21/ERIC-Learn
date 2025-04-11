@@ -94,6 +94,45 @@
             font-weight: 500;
         }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: #1a1a1a;
+            margin: 15% auto;
+            padding: 20px 30px;
+            border: 1px solid #00bcd4;
+            width: 80%;
+            max-width: 400px;
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #00bcd4;
+        }
+
         footer {
             background-color: #111;
             color: #aaa;
@@ -114,6 +153,32 @@
             }
         }
     </script>
+
+    <div id="visualModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Coming Soon</h3>
+            <p>The Visual AI module is under development and will be available soon.</p>
+            <button onclick="closeModal()" style="margin-top: 20px; padding: 10px 20px; background-color: #00bcd4; border: none; border-radius: 6px; color: white; font-weight: 500; cursor: pointer;">OK</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById("visualModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("visualModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("visualModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -132,7 +197,7 @@
         <div class="service-card">
             <h2>Visual AI</h2>
             <p>Visual AI presents topics with diagrams, charts, mind maps, and visual cues that help learners better understand concepts through a graphic-rich experience.</p>
-            <button onclick="checkLoginAndRedirect('./ai/visual_ai.html')">Let's Start</button>
+            <button onclick="openModal()">Let's Start</button>
         </div>
 
         <div class="service-card">

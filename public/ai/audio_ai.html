@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Audio AI - Eric Learn</title>
+    <link rel="icon" type="image/x-icon" href="./Img/icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding-right: 10px;
+        }
+
+        .navbar a, .navbar .user-email, .navbar button {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .container {
+            margin-top: 100px;
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        h1 {
+            color: #00bcd4;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 95%;
+            height: 100px;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1rem;
+            resize: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .generate {
+            width: 100%;
+            padding: 12px;
+            background-color: #00bcd4;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .generate:hover {
+            background-color: #00a2b8;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ERIC <span>Learn</span> <span class="user-email" id="userEmail"></span></div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../service.html">Services</a></li>
+            <li><button onclick="logout()">Logout</button></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Audio AI Generator</h1>
+        <textarea id="audioPrompt" placeholder="Ask anything..."></textarea>
+        <button class="generate" onclick="speakAnswer()">Speak Answer</button>
+        <div class="controls">
+            <button class="generate" onclick="playAudio()">Play</button>
+            <button class="generate" onclick="pauseAudio()">Pause</button>
+            <button class="generate" onclick="stopAudio()">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const userEmail = localStorage.getItem("userEmail");
+        document.getElementById("userEmail").textContent = userEmail ? ` - ${userEmail}` : "";
+
+        function logout() {
+            localStorage.removeItem("userEmail");
+            alert("Logged out successfully!");
+            window.location.href = "../login.html";
+        }
+    </script>
+
+    <script src="./qadata.js"></script>
+    <script>
+        let currentUtterance = null;
+        let selectedVoice = null;
+        let lastAnswer = "";
+        let isPaused = false;
+
+        function loadVoices() {
+            const voices = speechSynthesis.getVoices();
+            selectedVoice = voices.find(voice =>
+                voice.name.toLowerCase().includes("female") ||
+                voice.name.toLowerCase().includes("samantha") ||
+                voice.name.toLowerCase().includes("zira") ||
+                (voice.gender && voice.gender.toLowerCase() === "female")
+            );
+            if (!selectedVoice) {
+                selectedVoice = voices.find(voice => voice.lang.startsWith("en")) || voices[0];
+            }
+        }
+
+        speechSynthesis.onvoiceschanged = loadVoices;
+
+        function speakAnswer() {
+            const input = document.getElementById("audioPrompt").value.trim().toLowerCase();
+            if (!input) {
+                alert("Please enter a question.");
+                return;
+            }
+
+            let matchedAnswers = [];
+
+            for (const item of qaData) {
+                const match = item.keywords.some(keyword => input.includes(keyword));
+                if (match) {
+                    matchedAnswers.push(item.answer);
+                }
+            }
+
+            lastAnswer = matchedAnswers.length
+                ? matchedAnswers.join(". ")
+                : "Sorry, I don't have an answer for that yet.";
+
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            }
+
+            startSpeaking(lastAnswer);
+        }
+
+        function startSpeaking(text) {
+            currentUtterance = new SpeechSynthesisUtterance(text);
+            currentUtterance.lang = 'en-US';
+            currentUtterance.rate = 1;
+            if (selectedVoice) {
+                currentUtterance.voice = selectedVoice;
+            }
+            isPaused = false;
+            speechSynthesis.speak(currentUtterance);
+        }
+
+        function playAudio() {
+            if (isPaused) {
+                speechSynthesis.resume();
+                isPaused = false;
+            } else if (!speechSynthesis.speaking && lastAnswer) {
+                startSpeaking(lastAnswer);
+            }
+        }
+
+        function pauseAudio() {
+            if (speechSynthesis.speaking && !speechSynthesis.paused) {
+                speechSynthesis.pause();
+                isPaused = true;
+            }
+        }
+
+        function stopAudio() {
+            if (speechSynthesis.speaking || speechSynthesis.paused) {
+                speechSynthesis.cancel();
+                isPaused = false;
+            }
+        }
+
+        loadVoices();
+    </script>
+</body>
+</html>

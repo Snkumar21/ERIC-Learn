@@ -111,10 +111,11 @@
             .then((response) => response.json())
             .then((data) => {
                 if (data.success) {
-                alert("Login Successfully");
-                window.location.href = "/service";
+                    localStorage.setItem("userEmail", email);
+                    alert("Login Successfully");
+                    window.location.href = "/service";
                 } else {
-                alert("Error: " + data.message);
+                    alert("Error: " + data.message);
                 }
             })
             .catch((error) => console.error("Error:", error));

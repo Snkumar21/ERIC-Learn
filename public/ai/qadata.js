@@ -25,83 +25,83 @@ const qaData = [
     },
     {
         keywords: ["programming fundamentals"],
-        answer: "Programming Fundamentals is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 1)"
+        answer: "- Programming Fundamentals is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["variables and data types"],
-        answer: "Variables and Data Types is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 2)"
+        answer: "- Variables and Data Types is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["control structures", "if/else", "switch"],
-        answer: "Control Structures (If/Else, Switch) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 3)"
+        answer: "- Control Structures (If/Else, Switch) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["loops", "for", "while", "do-while"],
-        answer: "Loops (For, While, Do-While) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 4)"
+        answer: "- Loops (For, While, Do-While) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["functions", "methods"],
-        answer: "Functions/Methods is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 5)"
+        answer: "- Functions/Methods is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["recursion"],
-        answer: "Recursion is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 6)"
+        answer: "- Recursion is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["arrays"],
-        answer: "Arrays is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 7)"
+        answer: "- Arrays is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["multidimensional arrays"],
-        answer: "Multidimensional Arrays is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 8)"
+        answer: "- Multidimensional Arrays is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["strings", "string manipulation"],
-        answer: "Strings and String Manipulation is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 9)"
+        answer: "- Strings and String Manipulation is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["object-oriented programming", "oop"],
-        answer: "Object-Oriented Programming (OOP) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 10)"
+        answer: "- Object-Oriented Programming (OOP) is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["classes", "objects"],
-        answer: "Classes and Objects is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development. (Topic 11)"
+        answer: "- Classes and Objects is an important concept in programming. This topic covers key aspects such as its definition, how it's used, and its relevance in modern development."
     },
     {
         keywords: ["inheritance"],
-        answer: "Inheritance allows a class to acquire properties and behaviors of another class. It supports code reusability and hierarchical classification. (Topic 12)"
+        answer: "- Inheritance allows a class to acquire properties and behaviors of another class. It supports code reusability and hierarchical classification."
     },
     {
         keywords: ["polymorphism"],
-        answer: "Polymorphism allows objects to take many forms, enabling the same interface to be used for different data types. (Topic 13)"
+        answer: "- Polymorphism allows objects to take many forms, enabling the same interface to be used for different data types."
     },
     {
         keywords: ["encapsulation"],
-        answer: "Encapsulation is the bundling of data and methods that operate on the data within a single unit or class, enhancing data protection. (Topic 14)"
+        answer: "- Encapsulation is the bundling of data and methods that operate on the data within a single unit or class, enhancing data protection."
     },
     {
         keywords: ["abstraction"],
-        answer: "Abstraction hides implementation details and shows only functionality, helping reduce complexity. (Topic 15)"
+        answer: "- Abstraction hides implementation details and shows only functionality, helping reduce complexity."
       },
       {
         keywords: ["interfaces"],
-        answer: "Interfaces define a contract for classes without implementing the methods. Useful in achieving abstraction and multiple inheritance. (Topic 16)"
+        answer: "- Interfaces define a contract for classes without implementing the methods. Useful in achieving abstraction and multiple inheritance."
       },
       {
         keywords: ["abstract classes"],
-        answer: "Abstract Classes cannot be instantiated and often contain abstract methods meant to be implemented in derived classes. (Topic 17)"
+        answer: "- Abstract Classes cannot be instantiated and often contain abstract methods meant to be implemented in derived classes."
       },
       {
         keywords: ["constructors", "destructors"],
-        answer: "Constructors initialize objects, while destructors handle cleanup. They're vital in memory and resource management. (Topic 18)"
+        answer: "- Constructors initialize objects, while destructors handle cleanup. They're vital in memory and resource management."
       },
       {
         keywords: ["memory management"],
-        answer: "Memory Management involves the efficient allocation, use, and release of memory in applications. (Topic 19)"
+        answer: "- Memory Management involves the efficient allocation, use, and release of memory in applications."
       },
       {
         keywords: ["garbage collection"],
-        answer: "Garbage Collection is an automatic memory management process that reclaims memory occupied by unreachable objects. (Topic 20)"
+        answer: "- Garbage Collection is an automatic memory management process that reclaims memory occupied by unreachable objects."
       },
       {
         keywords: ["pointers", "references"],
@@ -249,7 +249,7 @@ const qaData = [
       },
       {
         keywords: ["html", "css"],
-        answer: "HTML and CSS are core technologies for building structured and styled web content. (Topic 57)"
+        answer: "HTML and CSS are core technologies for building structured and styled web content."
       },
       {
         keywords: ["javascript"],
@@ -413,14 +413,14 @@ const qaData = [
     },
     {
         keywords: ["python"],
-        answer: "Python is a high-level, interpreted language known for simplicity and readability. (Topic 98)"
+        answer: "Python is a high-level, interpreted language known for simplicity and readability."
     },
     {
         keywords: ["ruby"],
-        answer: "Ruby is an expressive, easy-to-read language often used in web development. (Topic 99)"
+        answer: "Ruby is an expressive, easy-to-read language often used in web development."
     },
     {
         keywords: ["functional programming"],
-        answer: "Functional Programming emphasizes immutability, first-class functions, and pure functions. (Topic 100)"
+        answer: "Functional Programming emphasizes immutability, first-class functions, and pure functions."
     }
 ];
