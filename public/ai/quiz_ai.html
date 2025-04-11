@@ -204,6 +204,12 @@
     </script>
     <script src="./quizdata.js"></script>
     <script>
+        function decodeHTML(html) {
+            const txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
+
         function generateQuiz() {
             const topic = document.getElementById("quizPrompt").value.trim().toLowerCase();
             const resBox = document.getElementById("quizResponse");
@@ -231,7 +237,7 @@
                     const optionId = `q${index}_opt${optIndex}`;
                     optionsBox.innerHTML += `
                         <label for="${optionId}">
-                            <input type="radio" name="q${index}" id="${optionId}" value="${opt}">
+                            <input type="radio" name="q${index}" id="${optionId}" value="${opt.replace(/"/g, '&quot;')}">
                             ${opt}
                         </label>`;
                 });
@@ -259,23 +265,24 @@
             questions.forEach((q, index) => {
                 const selected = document.querySelector(`input[name="q${index}"]:checked`);
                 const options = document.getElementsByName(`q${index}`);
-                const correctAnswer = q.answer;
+                const correctAnswer = decodeHTML(q.answer);
 
                 options.forEach(opt => {
                     const label = opt.closest("label");
-                    if (opt.value === correctAnswer) {
+                    const optValue = decodeHTML(opt.value);
+
+                    if (optValue === correctAnswer) {
                         label.classList.add("correct");
                     }
 
-                    if (opt.checked && opt.value !== correctAnswer) {
+                    if (opt.checked && optValue !== correctAnswer) {
                         label.classList.add("incorrect");
                     }
 
-                    // Disable options after submission
                     opt.disabled = true;
                 });
 
-                if (selected && selected.value === correctAnswer) {
+                if (selected && decodeHTML(selected.value) === correctAnswer) {
                     score++;
                 }
             });
