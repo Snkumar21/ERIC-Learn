@@ -337,82 +337,82 @@ const qaData = [
     },
     {
         keywords: ["docker", "containers"],
-        answer: "Docker allows you to package applications into containers for consistent deployment. (Topic 81)"
+        answer: "- Docker allows you to package applications into containers for consistent deployment."
     },
     {
         keywords: ["ci/cd"],
-        answer: "CI/CD refers to Continuous Integration and Deployment, improving software delivery speed and quality. (Topic 82)"
+        answer: "- CI/CD refers to Continuous Integration and Deployment, improving software delivery speed and quality."
     },
     {
         keywords: ["devops"],
-        answer: "DevOps is a set of practices that combines software development and IT operations. (Topic 83)"
+        answer: "- DevOps is a set of practices that combines software development and IT operations."
     },
     {
         keywords: ["cloud computing"],
-        answer: "Cloud Computing delivers computing services over the internet with flexible scalability. (Topic 84)"
+        answer: "- Cloud Computing delivers computing services over the internet with flexible scalability."
     },
     {
         keywords: ["aws"],
-        answer: "AWS (Amazon Web Services) offers on-demand cloud computing platforms and APIs. (Topic 85)"
+        answer: "- AWS (Amazon Web Services) offers on-demand cloud computing platforms and APIs."
     },
     {
         keywords: ["azure"],
-        answer: "Microsoft Azure is a cloud platform for building, deploying, and managing applications. (Topic 86)"
+        answer: "- Microsoft Azure is a cloud platform for building, deploying, and managing applications."
     },
     {
         keywords: ["google cloud", "gcp"],
-        answer: "Google Cloud Platform provides cloud services for computing, storage, machine learning, and more. (Topic 87)"
+        answer: "- Google Cloud Platform provides cloud services for computing, storage, machine learning, and more."
     },
     {
         keywords: ["serverless"],
-        answer: "Serverless Architecture lets you build and run applications without managing servers. (Topic 88)"
+        answer: "- Serverless Architecture lets you build and run applications without managing servers."
     },
     {
         keywords: ["mobile development"],
-        answer: "Mobile App Development involves creating software for smartphones and tablets. (Topic 89)"
+        answer: "- Mobile App Development involves creating software for smartphones and tablets."
     },
     {
         keywords: ["android", "kotlin", "java android"],
-        answer: "Android Development uses Java or Kotlin to create native Android apps. (Topic 90)"
+        answer: "- Android Development uses Java or Kotlin to create native Android apps."
     },
     {
         keywords: ["ios", "swift"],
-        answer: "iOS Development uses Swift and Objective-C for building apps on Apple devices. (Topic 91)"
+        answer: "- iOS Development uses Swift and Objective-C for building apps on Apple devices."
     },
     {
         keywords: ["flutter", "react native"],
-        answer: "Cross-Platform Development tools like Flutter and React Native enable building apps for iOS and Android with one codebase. (Topic 92)"
+        answer: "- Cross-Platform Development tools like Flutter and React Native enable building apps for iOS and Android with one codebase."
     },
     {
         keywords: ["game development"],
-        answer: "Game Development involves designing, coding, and testing interactive games. (Topic 93)"
+        answer: "- Game Development involves designing, coding, and testing interactive games."
     },
     {
         keywords: ["unity"],
-        answer: "Unity is a cross-platform game engine used for building 2D and 3D games. (Topic 94)"
+        answer: "- Unity is a cross-platform game engine used for building 2D and 3D games."
     },
     {
         keywords: ["unreal engine"],
-        answer: "Unreal Engine is a powerful game development engine developed by Epic Games. (Topic 95)"
+        answer: "- Unreal Engine is a powerful game development engine developed by Epic Game."
     },
     {
         keywords: ["c++"],
-        answer: "C++ is a high-performance language used in system software, game engines, and more. (Topic 96)"
+        answer: "- C++ is a high-performance language used in system software, game engines, and more."
     },
     {
         keywords: ["java"],
-        answer: "Java is a versatile, object-oriented language widely used for web, mobile, and desktop apps. (Topic 97)"
+        answer: "- Java is a versatile, object-oriented language widely used for web, mobile, and desktop apps."
     },
     {
         keywords: ["python"],
-        answer: "Python is a high-level, interpreted language known for simplicity and readability."
+        answer: "- Python is a high-level, interpreted language known for simplicity and readability."
     },
     {
         keywords: ["ruby"],
-        answer: "Ruby is an expressive, easy-to-read language often used in web development."
+        answer: "- Ruby is an expressive, easy-to-read language often used in web development."
     },
     {
         keywords: ["functional programming"],
-        answer: "Functional Programming emphasizes immutability, first-class functions, and pure functions."
+        answer: "- Functional Programming emphasizes immutability, first-class functions, and pure functions."
     }
 ];
