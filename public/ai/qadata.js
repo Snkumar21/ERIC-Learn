@@ -297,43 +297,43 @@ const qaData = [
     },
     {
         keywords: ["postgresql"],
-        answer: "PostgreSQL is a powerful, open-source object-relational database system. (Topic 71)"
+        answer: "- PostgreSQL is a powerful, open-source object-relational database system."
     },
     {
         keywords: ["mongodb"],
-        answer: "MongoDB is a NoSQL document-oriented database used for high-volume data storage. (Topic 72)"
+        answer: "- MongoDB is a NoSQL document-oriented database used for high-volume data storage."
     },
     {
         keywords: ["sqlite"],
-        answer: "SQLite is a lightweight, file-based relational database used for local storage. (Topic 73)"
+        answer: "- SQLite is a lightweight, file-based relational database used for local storage."
     },
     {
         keywords: ["database design"],
-        answer: "Database Design involves planning the structure and relationships of data for optimal storage and access. (Topic 74)"
+        answer: "- Database Design involves planning the structure and relationships of data for optimal storage and access."
     },
     {
         keywords: ["orm"],
-        answer: "ORM (Object-Relational Mapping) allows you to interact with databases using object-oriented code. (Topic 75)"
+        answer: "- ORM (Object-Relational Mapping) allows you to interact with databases using object-oriented code."
     },
     {
         keywords: ["restful apis"],
-        answer: "RESTful APIs use HTTP methods and are based on REST principles for building scalable services. (Topic 76)"
+        answer: "- RESTful APIs use HTTP methods and are based on REST principles for building scalable services."
     },
     {
         keywords: ["graphql"],
-        answer: "GraphQL is a query language for APIs and a runtime for executing those queries. (Topic 77)"
+        answer: "- GraphQL is a query language for APIs and a runtime for executing those queries."
     },
     {
         keywords: ["web services"],
-        answer: "Web Services allow communication between machines over a network using standards like SOAP and REST. (Topic 78)"
+        answer: "- Web Services allow communication between machines over a network using standards like SOAP and REST."
     },
     {
         keywords: ["git", "github", "version control"],
-        answer: "Version Control using Git and GitHub helps track and manage changes to source code. (Topic 79)"
+        answer: "- Version Control using Git and GitHub helps track and manage changes to source code."
     },
     {
         keywords: ["git workflow"],
-        answer: "Git Workflow defines branching and merging models to collaborate on software efficiently. (Topic 80)"
+        answer: "- Git Workflow defines branching and merging models to collaborate on software efficiently."
     },
     {
         keywords: ["docker", "containers"],
