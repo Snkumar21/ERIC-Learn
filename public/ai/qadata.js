@@ -105,203 +105,195 @@ const qaData = [
       },
       {
         keywords: ["pointers", "references"],
-        answer: "Pointers and References are used to directly access memory and manipulate data efficiently. (Topic 21)"
+        answer: "- Pointers and References are used to directly access memory and manipulate data efficiently."
       },
       {
         keywords: ["dynamic memory allocation"],
-        answer: "Dynamic Memory Allocation allows programs to request memory during runtime using operators like malloc, calloc, or new. (Topic 22)"
+        answer: "- Dynamic Memory Allocation allows programs to request memory during runtime using operators like malloc, calloc, or new."
       },
       {
         keywords: ["exception handling"],
-        answer: "Exception Handling is the process of responding to runtime errors using try, catch, and finally blocks. (Topic 23)"
+        answer: "- Exception Handling is the process of responding to runtime errors using try, catch, and finally blocks."
       },
       {
         keywords: ["error handling"],
-        answer: "Error Handling involves anticipating, detecting, and resolving application errors to ensure stability. (Topic 24)"
+        answer: "- Error Handling involves anticipating, detecting, and resolving application errors to ensure stability."
       },
       {
         keywords: ["file handling"],
-        answer: "File Handling allows reading from and writing to files in various modes like text or binary. (Topic 25)"
+        answer: "- File Handling allows reading from and writing to files in various modes like text or binary."
       },
       {
         keywords: ["input/output operations"],
-        answer: "Input/Output Operations involve handling user or system data for processing and displaying results. (Topic 26)"
+        answer: "- Input/Output Operations involve handling user or system data for processing and displaying results."
       },
       {
         keywords: ["sorting algorithms"],
-        answer: "Sorting Algorithms arrange data in a specific order, commonly used types include bubble sort, merge sort, and quick sort. (Topic 27)"
+        answer: "- Sorting Algorithms arrange data in a specific order, commonly used types include bubble sort, merge sort, and quick sort."
       },
       {
         keywords: ["searching algorithms"],
-        answer: "Searching Algorithms help find an element in a dataset, such as linear and binary search. (Topic 28)"
+        answer: "- Searching Algorithms help find an element in a dataset, such as linear and binary search."
       },
       {
         keywords: ["big o notation"],
-        answer: "Big O Notation describes the worst-case performance of algorithms in terms of time or space. (Topic 29)"
+        answer: "- Big O Notation describes the worst-case performance of algorithms in terms of time or space."
       },
       {
         keywords: ["time complexity"],
-        answer: "Time Complexity is a measure of the time an algorithm takes to complete relative to input size. (Topic 30)"
+        answer: "- Time Complexity is a measure of the time an algorithm takes to complete relative to input size."
       },
       {
         keywords: ["space complexity"],
-        answer: "Space Complexity is the total memory space required by an algorithm to run to completion. (Topic 31)"
+        answer: "- Space Complexity is the total memory space required by an algorithm to run to completion."
       },
       {
         keywords: ["stacks"],
-        answer: "A Stack is a LIFO (Last In First Out) data structure used in recursion, parsing, and backtracking. (Topic 32)"
+        answer: "- A Stack is a LIFO (Last In First Out) data structure used in recursion, parsing, and backtracking."
       },
       {
         keywords: ["queues"],
-        answer: "A Queue is a FIFO (First In First Out) data structure used in scheduling and buffering. (Topic 33)"
+        answer: "- A Queue is a FIFO (First In First Out) data structure used in scheduling and buffering."
       },
       {
         keywords: ["linked lists"],
-        answer: "Linked Lists are linear data structures where each element points to the next. (Topic 34)"
+        answer: "- Linked Lists are linear data structures where each element points to the next."
       },
       {
         keywords: ["doubly linked lists"],
-        answer: "Doubly Linked Lists contain links to both the next and previous elements, allowing bidirectional traversal. (Topic 35)"
+        answer: "- Doubly Linked Lists contain links to both the next and previous elements, allowing bidirectional traversal."
       },
       {
         keywords: ["trees"],
-        answer: "Trees are hierarchical data structures used for representing relationships like file systems or DOM. (Topic 36)"
+        answer: "- Trees are hierarchical data structures used for representing relationships like file systems or DOM."
       },
       {
         keywords: ["binary search tree", "bst"],
-        answer: "Binary Search Trees are sorted binary trees that allow efficient searching, insertion, and deletion. (Topic 37)"
+        answer: "- Binary Search Trees are sorted binary trees that allow efficient searching, insertion, and deletion."
       },
       {
         keywords: ["heaps"],
-        answer: "Heaps are complete binary trees used to implement priority queues. (Topic 38)"
+        answer: "- Heaps are complete binary trees used to implement priority queues."
       },
       {
         keywords: ["graphs"],
-        answer: "Graphs consist of nodes and edges and are useful in modeling networks and connections. (Topic 39)"
+        answer: "- Graphs consist of nodes and edges and are useful in modeling networks and connections."
       },
       {
         keywords: ["graph algorithms", "dfs", "bfs"],
-        answer: "Graph Algorithms like DFS and BFS help in traversing or searching graph data structures. (Topic 40)"
+        answer: "- Graph Algorithms like DFS and BFS help in traversing or searching graph data structures."
       },
       {
         keywords: ["hashing"],
-        answer: "Hashing maps data to a fixed-size value, allowing efficient data retrieval using hash functions. (Topic 41)"
+        answer: "- Hashing maps data to a fixed-size value, allowing efficient data retrieval using hash functions."
       },
       {
         keywords: ["hash tables"],
-        answer: "Hash Tables store key-value pairs and offer average-case O(1) access time. (Topic 42)"
+        answer: "- Hash Tables store key-value pairs and offer average-case O(1) access time."
       },
       {
         keywords: ["dynamic programming"],
-        answer: "Dynamic Programming solves problems by breaking them down into overlapping subproblems and using memoization. (Topic 43)"
+        answer: "- Dynamic Programming solves problems by breaking them down into overlapping subproblems and using memoization."
       },
       {
         keywords: ["greedy algorithms"],
-        answer: "Greedy Algorithms make the locally optimal choice at each step, aiming for a global optimum. (Topic 44)"
+        answer: "- Greedy Algorithms make the locally optimal choice at each step, aiming for a global optimum."
       },
       {
         keywords: ["divide and conquer"],
-        answer: "Divide and Conquer breaks a problem into subproblems, solves them recursively, and combines results. (Topic 45)"
+        answer: "- Divide and Conquer breaks a problem into subproblems, solves them recursively, and combines results."
       },
       {
         keywords: ["backtracking"],
-        answer: "Backtracking explores all possible solutions by building a solution incrementally and abandoning paths that fail. (Topic 46)"
+        answer: "- Backtracking explores all possible solutions by building a solution incrementally and abandoning paths that fail."
       },
       {
         keywords: ["concurrency", "parallelism"],
-        answer: "Concurrency and Parallelism improve performance by executing multiple tasks simultaneously or interleaved. (Topic 47)"
+        answer: "- Concurrency and Parallelism improve performance by executing multiple tasks simultaneously or interleaved."
       },
       {
         keywords: ["multithreading"],
-        answer: "Multithreading allows concurrent execution of two or more parts of a program for maximum CPU utilization. (Topic 48)"
+        answer: "- Multithreading allows concurrent execution of two or more parts of a program for maximum CPU utilization."
       },
       {
         keywords: ["asynchronous programming"],
-        answer: "Asynchronous Programming improves responsiveness by allowing non-blocking operations. (Topic 49)"
+        answer: "- Asynchronous Programming improves responsiveness by allowing non-blocking operations."
       },
       {
         keywords: ["promises", "callbacks"],
-        answer: "Promises and Callbacks handle asynchronous events in JavaScript and other languages. (Topic 50)"
+        answer: "- Promises and Callbacks handle asynchronous events in JavaScript and other languages."
       },
       {
         keywords: ["event loop"],
-        answer: "The Event Loop is a mechanism in JavaScript that handles asynchronous code execution. (Topic 51)"
+        answer: "- The Event Loop is a mechanism in JavaScript that handles asynchronous code execution."
       },
       {
         keywords: ["network programming"],
-        answer: "Network Programming enables communication between programs over a network using protocols like TCP/IP. (Topic 52)"
+        answer: "- Network Programming enables communication between programs over a network using protocols like TCP/IP."
       },
       {
         keywords: ["sockets"],
-        answer: "Sockets provide a way to establish communication between client and server over a network. (Topic 53)"
+        answer: "- Sockets provide a way to establish communication between client and server over a network."
       },
       {
         keywords: ["client-server model"],
-        answer: "The Client-Server Model is a distributed system structure dividing tasks between providers (servers) and requesters (clients). (Topic 54)"
+        answer: "- The Client-Server Model is a distributed system structure dividing tasks between providers (servers) and requesters (clients)."
       },
       {
         keywords: ["web development"],
-        answer: "Web Development involves creating websites or web applications using technologies like HTML, CSS, JavaScript, and backend tools. (Topic 55)"
+        answer: "- Web Development involves creating websites or web applications using technologies like HTML, CSS, JavaScript, and backend tools."
       },
       {
         keywords: ["front-end development"],
-        answer: "Front-End Development focuses on building the visual part of websites users interact with. (Topic 56)"
-      },
-      {
-        keywords: ["html", "css"],
-        answer: "HTML and CSS are core technologies for building structured and styled web content."
-      },
-      {
-        keywords: ["javascript"],
-        answer: "JavaScript is a scripting language that enables interactivity in web pages. (Topic 58)"
+        answer: "- Front-End Development focuses on building the visual part of websites users interact with."
       },
       {
         keywords: ["react"],
-        answer: "React is a JavaScript library for building fast and interactive user interfaces. (Topic 59)"
+        answer: "- React is a JavaScript library for building fast and interactive user interfaces."
     },
     {
         keywords: ["vue.js"],
-        answer: "Vue.js is a progressive JavaScript framework for building UIs and single-page applications. (Topic 60)"
+        answer: "- Vue.js is a progressive JavaScript framework for building UIs and single-page applications."
     },
     {
         keywords: ["angular"],
-        answer: "Angular is a TypeScript-based framework used for building scalable front-end applications. (Topic 61)"
+        answer: "- Angular is a TypeScript-based framework used for building scalable front-end applications."
     },
     {
         keywords: ["back-end development"],
-        answer: "Back-End Development focuses on server-side logic, databases, and API communication. (Topic 62)"
+        answer: "- Back-End Development focuses on server-side logic, databases, and API communication."
     },
     {
         keywords: ["node.js"],
-        answer: "Node.js is a runtime environment that lets you run JavaScript on the server. (Topic 63)"
+        answer: "- Node.js is a runtime environment that lets you run JavaScript on the server."
     },
     {
         keywords: ["express.js"],
-        answer: "Express.js is a web application framework for Node.js used for building APIs and web servers. (Topic 64)"
+        answer: "- Express.js is a web application framework for Node.js used for building APIs and web servers."
     },
     {
         keywords: ["python web"],
-        answer: "Python can be used for web development using frameworks like Django and Flask. (Topic 65)"
+        answer: "- Python can be used for web development using frameworks like Django and Flask."
     },
     {
         keywords: ["ruby on rails"],
-        answer: "Ruby on Rails is a server-side web application framework written in Ruby. (Topic 66)"
+        answer: "- Ruby on Rails is a server-side web application framework written in Ruby."
     },
     {
         keywords: ["django"],
-        answer: "Django is a high-level Python web framework that promotes rapid development and clean design. (Topic 67)"
+        answer: "- Django is a high-level Python web framework that promotes rapid development and clean design."
     },
     {
         keywords: ["flask"],
-        answer: "Flask is a lightweight Python web framework ideal for small applications and APIs. (Topic 68)"
+        answer: "- Flask is a lightweight Python web framework ideal for small applications and APIs."
     },
     {
         keywords: ["databases", "sql", "nosql"],
-        answer: "Databases are structured collections of data; SQL and NoSQL are two primary types. (Topic 69)"
+        answer: "- Databases are structured collections of data; SQL and NoSQL are two primary types."
     },
     {
         keywords: ["mysql"],
-        answer: "MySQL is a popular open-source relational database management system. (Topic 70)"
+        answer: "- MySQL is a popular open-source relational database management system."
     },
     {
         keywords: ["postgresql"],
