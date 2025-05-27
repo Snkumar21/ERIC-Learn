@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve static files (only if needed)
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "frontend")));
 
 // MySQL Database Connection
 const db = mysql.createConnection({
@@ -87,16 +87,16 @@ app.post("/contact", (req, res) => {
 
 // Static routes (optional for development)
 app.get("/index", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+    res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "login.html"));
+    res.sendFile(path.join(__dirname, "frontend", "login.html"));
 });
 app.get("/service", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "service.html"));
+    res.sendFile(path.join(__dirname, "frontend", "service.html"));
 });
 app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "signup.html"));
+    res.sendFile(path.join(__dirname, "frontend", "signup.html"));
 });
 
 // Start server
