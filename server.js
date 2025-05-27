@@ -5,8 +5,20 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 const app = express();
+const PORT = process.env.PORT || 3005;
+
+// Enable CORS
+app.use(cors());
+
+// Body parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Serve static files (only if needed)
+app.use(express.static(path.join(__dirname, "public")));
 
 // MySQL Database Connection
 const db = mysql.createConnection({
@@ -16,65 +28,43 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME || "eric_db",
 });
 
-app.use(express.static(path.join(__dirname, "public")));
-
 db.connect(err => {
     if (err) {
-        console.error('Error connecting to MySQL:', err);
+        console.error('❌ Error connecting to MySQL:', err);
     } else {
-        console.log('Connected to MySQL Database');
+        console.log('✅ Connected to MySQL Database');
     }
 });
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-// User Registration Endpoint
+// Register
 app.post('/registerform', (req, res) => {
     const { username, email, password } = req.body;
 
-    const userExistsQuery = 'SELECT * FROM users WHERE email = ?';
-    db.query(userExistsQuery, [email], (err, result) => {
-        if (err) {
-            console.error("Error checking user existence:", err);
-            return res.status(500).json({ success: false, message: 'Error checking user' });
-        }
+    db.query('SELECT * FROM users WHERE email = ?', [email], (err, result) => {
+        if (err) return res.status(500).json({ success: false, message: 'Error checking user' });
+        if (result.length > 0) return res.status(400).json({ success: false, message: 'User already exists' });
 
-        if (result.length > 0) {
-            return res.status(400).json({ success: false, message: 'User already exists' });
-        }
-
-        // Hash the password before saving it
         bcrypt.hash(password, 10, (err, hash) => {
-            if (err) {
-                console.error("Error hashing password:", err);
-                return res.status(500).json({ success: false, message: 'Error hashing password' });
-            }
+            if (err) return res.status(500).json({ success: false, message: 'Error hashing password' });
 
-            const query = 'INSERT INTO users (username, email, password1) VALUES (?, ?, ?)';
-            db.query(query, [username, email, hash], (err, result) => {
-                if (err) {
-                    console.error("Error registering user:", err);
-                    return res.status(500).json({ success: false, message: 'Error registering user' });
-                }
-
-                res.status(201).json({ success: true, message: 'User registered successfully' });
-            });
+            db.query('INSERT INTO users (username, email, password1) VALUES (?, ?, ?)',
+                [username, email, hash], (err) => {
+                    if (err) return res.status(500).json({ success: false, message: 'Error registering user' });
+                    res.status(201).json({ success: true, message: 'User registered successfully' });
+                });
         });
     });
 });
 
-// User Login Endpoint
+// Login
 app.post('/loginform', (req, res) => {
     const { email, password } = req.body;
 
-    const query = 'SELECT * FROM users WHERE email = ?';
-    db.query(query, [email], (err, result) => {
+    db.query('SELECT * FROM users WHERE email = ?', [email], (err, result) => {
         if (err) return res.status(500).send({ success: false, message: 'Error logging in' });
         if (result.length === 0) return res.status(400).send({ success: false, message: 'User not found' });
 
         const user = result[0];
-
         bcrypt.compare(password, user.password1, (err, isMatch) => {
             if (err) return res.status(500).send({ success: false, message: 'Error checking password' });
             if (!isMatch) return res.status(400).send({ success: false, message: 'Invalid password' });
@@ -85,22 +75,17 @@ app.post('/loginform', (req, res) => {
     });
 });
 
-// User Contact Form
+// Contact
 app.post("/contact", (req, res) => {
     const { name, email, message } = req.body;
-
-    const query = "INSERT INTO contact1 (uname, email, message) VALUES (?, ?, ?)";
-    db.query(query, [name, email, message], (err, results) => {
-        if (err) {
-            console.error("Error inserting data into contact1:", err);
-            res.status(500).json({ success: false, message: 'Error submitting message' });
-        } else {
+    db.query("INSERT INTO contact1 (uname, email, message) VALUES (?, ?, ?)",
+        [name, email, message], (err) => {
+            if (err) return res.status(500).json({ success: false, message: 'Error submitting message' });
             res.status(200).json({ success: true, message: 'Message submitted successfully' });
-        }
-    });
+        });
 });
 
-// Serve static HTML files
+// Static routes (optional for development)
 app.get("/index", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
@@ -114,7 +99,7 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "signup.html"));
 });
 
-// Start the server
-app.listen(3005, () => {
-    console.log("Server is running on http://localhost:3005");
+// Start server
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
